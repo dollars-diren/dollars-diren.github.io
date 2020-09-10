@@ -7,16 +7,16 @@
   
   <title>甘楽的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="数据结构学习心得   学习了一段时间的数据结构，看了一些书，发现数据结构总会和算法连在一起，感觉有点奇怪，数据结构为什么不独立教呢？，为什么书名大都是&#x3D;&#x3D;数据结构和算法&#x3D;&#x3D;呢？数据结构和算法是什么关系呢？   应用起来才感觉到数据结构就好像算法一样，只不过是一种&#x3D;&#x3D;解决数据存储问题的算法&#x3D;&#x3D;；而数据又往往避免不了查找和排序操作，需要学习&#x3D;&#x3D;查找和排序算法&#x3D;&#x3D;，两者结合才能基本满足对数据的操作.">
+  <meta name="description" content="数据结构学习心得   学习了一段时间的数据结构，看了一些书，发现数据结构总会和算法连在一起，感觉有点奇怪，数据结构为什么不独立教呢？，为什么书名大都是数据结构和算法呢？数据结构和算法是什么关系呢？   应用起来才感觉到数据结构就好像算法一样，只不过是一种解决数据存储问题的算法；而数据又往往避免不了查找和排序操作，需要学习查找和排序算法，两者结合才能基本满足对数据的操作.     数据结构说白了就是">
 <meta property="og:type" content="article">
 <meta property="og:title" content="甘楽的博客">
 <meta property="og:url" content="http://example.com/2020/09/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/index.html">
 <meta property="og:site_name" content="甘楽的博客">
-<meta property="og:description" content="数据结构学习心得   学习了一段时间的数据结构，看了一些书，发现数据结构总会和算法连在一起，感觉有点奇怪，数据结构为什么不独立教呢？，为什么书名大都是&#x3D;&#x3D;数据结构和算法&#x3D;&#x3D;呢？数据结构和算法是什么关系呢？   应用起来才感觉到数据结构就好像算法一样，只不过是一种&#x3D;&#x3D;解决数据存储问题的算法&#x3D;&#x3D;；而数据又往往避免不了查找和排序操作，需要学习&#x3D;&#x3D;查找和排序算法&#x3D;&#x3D;，两者结合才能基本满足对数据的操作.">
+<meta property="og:description" content="数据结构学习心得   学习了一段时间的数据结构，看了一些书，发现数据结构总会和算法连在一起，感觉有点奇怪，数据结构为什么不独立教呢？，为什么书名大都是数据结构和算法呢？数据结构和算法是什么关系呢？   应用起来才感觉到数据结构就好像算法一样，只不过是一种解决数据存储问题的算法；而数据又往往避免不了查找和排序操作，需要学习查找和排序算法，两者结合才能基本满足对数据的操作.     数据结构说白了就是">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20191009170711713.png">
 <meta property="article:published_time" content="2020-09-10T11:07:28.106Z">
-<meta property="article:modified_time" content="2020-09-10T15:59:35.151Z">
+<meta property="article:modified_time" content="2020-09-10T16:04:37.584Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://img-blog.csdnimg.cn/20191009170711713.png">
@@ -81,24 +81,24 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="数据结构学习心得"><a href="#数据结构学习心得" class="headerlink" title="数据结构学习心得"></a>数据结构学习心得</h1><hr>
-<p>  学习了一段时间的数据结构，看了一些书，发现数据结构总会和算法连在一起，感觉有点奇怪，数据结构为什么不独立教呢？，为什么书名大都是==数据结构和算法==呢？数据结构和算法是什么关系呢？</p>
-<p>  应用起来才感觉到数据结构就好像算法一样，只不过是一种==解决数据存储问题的算法==；而数据又往往避免不了查找和排序操作，需要学习==查找和排序算法==，两者结合才能基本满足对数据的操作.</p>
+<p>  学习了一段时间的数据结构，看了一些书，发现数据结构总会和算法连在一起，感觉有点奇怪，数据结构为什么不独立教呢？，为什么书名大都是<strong>数据结构和算法</strong>呢？数据结构和算法是什么关系呢？</p>
+<p>  应用起来才感觉到数据结构就好像算法一样，只不过是一种解决<strong>数据存储问题</strong>的算法；而数据又往往避免不了查找和排序操作，需要学习<code>查找和排序算法</code>，两者结合才能基本满足对数据的操作.</p>
 <hr>
-<p>   数据结构说白了就是要把人脑中==抽象==的数据存储方式（树，图等）用电脑中==具体==的==物理内存==实现。</p>
-<p>   所以在代码实现时候要明白抽象的储存方式是怎么和内存==建立联系==的。</p>
-<p>   毕竟内存地址是呈==线性==排列下来的，并没有“树”所需要的分支，也没有一种额外储存网的”权”的空间，因此我们需要<strong>指针和结构体</strong>等工具来建立这种抽象联系。</p>
-<p>   指针在数据结构中充当一种工具，让储存在存储器不同位置的数据建立==联系==，比如图的边，和链表的连接。</p>
-<p>   结构体则拓宽了结点的==存储空间==以便放入更多信息，比如权或父/子结点。</p>
-<p><img src="https://img-blog.csdnimg.cn/20191009170711713.png" alt="在这里插入图片描述">虽然数据本质上还是存储在==线性==的物理内存中，但在==逻辑上==和我们==脑中==却是一个相对==抽象==的树或图。</p>
+<p>   数据结构说白了就是要把人脑中<strong>抽象</strong>的数据存储方式（树，图等）用电脑中<strong>具体</strong>的物理内存实现。</p>
+<p>   所以在代码实现时候要明白抽象的储存方式是怎么和内存建立联系的。</p>
+<p>   毕竟内存地址是呈线性排列下来的，并没有“树”所需要的分支，也没有一种额外储存网的”权”的空间，因此我们需要<strong>指针和结构体</strong>等工具来建立这种抽象联系。</p>
+<p>   指针在数据结构中充当一种工具，让储存在存储器不同位置的数据建立联系，比如图的边，和链表的连接。</p>
+<p>   结构体则拓宽了结点的存储空间以便放入更多信息，比如权或父/子结点。</p>
+<p><img src="https://img-blog.csdnimg.cn/20191009170711713.png" alt="在这里插入图片描述">虽然数据本质上还是存储在线性的物理内存中，但在逻辑上却是一个相对抽象的树或图。</p>
 <hr>
-<p>从数组到链表，是物理内存<strong>地址</strong>的连续到不连续；<br>从链表到树到图是<strong>对应关系</strong>的增加<br>（从==一对一==  到  ==一对多==  再到  ==多对多==）；<br>而队列，栈，权就是<strong>人为地加条件</strong>，以满足某种特定的需求。</p>
+<p>从数组到链表，是物理内存<strong>地址</strong>的连续到不连续；<br>从链表到树到图是<strong>对应关系</strong>的增加<br>（从一对一  到  一对多  再到  多对多）；<br>而队列，栈，权就是<strong>人为地加条件</strong>，以满足某种特定的需求。</p>
 <hr>
 <p>要熟悉一种数据结构或算法，最好就是先明白原理，然后找个模板或者样例反复敲代码然后自己用数据测试几次，否则就会有种似懂非懂，隔了层纱的感觉。 </p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/09/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/" data-id="ckewzzmrj0000p8ut2vvw46q5" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2020/09/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/" data-id="ckex05xle0000ucut93a90k93" class="article-share-link">Share</a>
       
       
     </footer>
