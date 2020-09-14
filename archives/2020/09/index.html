@@ -221,8 +221,8 @@
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/2020/09/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/" itemprop="url">
-            <span itemprop="name">数据结构学习心得</span>
+          <a class="post-title-link" href="/2020/09/11/%E5%85%B3%E4%BA%8E%E6%9B%B4%E6%8D%A2next%E4%B8%BB%E9%A2%98%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/" itemprop="url">
+            <span itemprop="name">关于更换next无法访问的问题</span>
           </a>
       </div>
 
@@ -241,8 +241,8 @@
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/2020/09/11/%E5%85%B3%E4%BA%8E%E6%9B%B4%E6%8D%A2next%E4%B8%BB%E9%A2%98%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/" itemprop="url">
-            <span itemprop="name">关于更换next无法访问的问题</span>
+          <a class="post-title-link" href="/2020/09/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E5%BF%83%E5%BE%97/" itemprop="url">
+            <span itemprop="name">数据结构学习心得</span>
           </a>
       </div>
 
@@ -419,6 +419,61 @@
 
 
   
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
