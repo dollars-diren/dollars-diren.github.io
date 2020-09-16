@@ -22,22 +22,21 @@
 
 
 
-  <meta name="description" content="在学习了重定向之后，我尝试用txt来输入输出，但是总是会出现一个问题——数字和英文还好，一旦出现汉字字符，在运行后输出的txt中就会变成乱码。 这不是txt中的数据格式有问题，或者重定向有问题，而是txt的保存问题。">
+  <meta name="description" content="题面The Moon Time Limit: 2000&#x2F;1000 MS (Java&#x2F;Others)  Memory Limit: 262144&#x2F;262144 K (Java&#x2F;Others)Total Submission(s): 1120  Accepted Submission(s): 497Special Judge">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于重定向到txt时输入的字符在输出会变成乱码的问题">
-<meta property="og:url" content="http://example.com/2020/09/12/%E5%85%B3%E4%BA%8E%E9%87%8D%E5%AE%9A%E5%90%91%E5%88%B0txt%E6%97%B6%E8%BE%93%E5%85%A5%E7%9A%84%E5%AD%97%E7%AC%A6%E5%9C%A8%E8%BE%93%E5%87%BA%E4%BC%9A%E5%8F%98%E6%88%90%E4%B9%B1%E7%A0%81%E7%9A%84%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:title" content="[概率dp]The moon">
+<meta property="og:url" content="http://example.com/2020/09/16/[%E6%A6%82%E7%8E%87dp]The-moon/index.html">
 <meta property="og:site_name" content="甘楽的博客">
-<meta property="og:description" content="在学习了重定向之后，我尝试用txt来输入输出，但是总是会出现一个问题——数字和英文还好，一旦出现汉字字符，在运行后输出的txt中就会变成乱码。 这不是txt中的数据格式有问题，或者重定向有问题，而是txt的保存问题。">
+<meta property="og:description" content="题面The Moon Time Limit: 2000&#x2F;1000 MS (Java&#x2F;Others)  Memory Limit: 262144&#x2F;262144 K (Java&#x2F;Others)Total Submission(s): 1120  Accepted Submission(s): 497Special Judge">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200710191244187.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L29zdXNvZXI=,size_16,color_FFFFFF,t_70">
-<meta property="article:published_time" content="2020-09-12T06:52:24.392Z">
-<meta property="article:modified_time" content="2020-09-12T09:00:32.898Z">
+<meta property="article:published_time" content="2020-09-16T04:48:09.069Z">
+<meta property="article:modified_time" content="2020-09-16T06:56:06.602Z">
 <meta property="article:author" content="甘楽">
-<meta property="article:tag" content="问题">
+<meta property="article:tag" content="题解">
+<meta property="article:tag" content="概率dp">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200710191244187.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L29zdXNvZXI=,size_16,color_FFFFFF,t_70">
 
-<link rel="canonical" href="http://example.com/2020/09/12/%E5%85%B3%E4%BA%8E%E9%87%8D%E5%AE%9A%E5%90%91%E5%88%B0txt%E6%97%B6%E8%BE%93%E5%85%A5%E7%9A%84%E5%AD%97%E7%AC%A6%E5%9C%A8%E8%BE%93%E5%87%BA%E4%BC%9A%E5%8F%98%E6%88%90%E4%B9%B1%E7%A0%81%E7%9A%84%E9%97%AE%E9%A2%98/">
+<link rel="canonical" href="http://example.com/2020/09/16/[%E6%A6%82%E7%8E%87dp]The-moon/">
 
 
 <script id="page-configurations">
@@ -50,7 +49,7 @@
   };
 </script>
 
-  <title>关于重定向到txt时输入的字符在输出会变成乱码的问题 | 甘楽的博客</title>
+  <title>[概率dp]The moon | 甘楽的博客</title>
   
 
 
@@ -166,7 +165,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/12/%E5%85%B3%E4%BA%8E%E9%87%8D%E5%AE%9A%E5%90%91%E5%88%B0txt%E6%97%B6%E8%BE%93%E5%85%A5%E7%9A%84%E5%AD%97%E7%AC%A6%E5%9C%A8%E8%BE%93%E5%87%BA%E4%BC%9A%E5%8F%98%E6%88%90%E4%B9%B1%E7%A0%81%E7%9A%84%E9%97%AE%E9%A2%98/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/16/[%E6%A6%82%E7%8E%87dp]The-moon/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -179,7 +178,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          关于重定向到txt时输入的字符在输出会变成乱码的问题
+          [概率dp]The moon
         </h1>
 
         <div class="post-meta">
@@ -190,7 +189,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-09-12 14:52:24 / 修改时间：17:00:32" itemprop="dateCreated datePublished" datetime="2020-09-12T14:52:24+08:00">2020-09-12</time>
+              <time title="创建时间：2020-09-16 12:48:09 / 修改时间：14:56:06" itemprop="dateCreated datePublished" datetime="2020-09-16T12:48:09+08:00">2020-09-16</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -198,7 +197,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%97%AE%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">问题</span></a>
+                  <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">题解</span></a>
                 </span>
             </span>
 
@@ -213,12 +212,64 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><strong>在学习了重定向之后，我尝试用txt来输入输出，但是总是会出现一个问题——数字和英文还好，一旦出现汉字字符，在运行后输出的txt中就会变成乱码。</strong></p>
-<p><strong>这不是txt中的数据格式有问题，或者重定向有问题，而是txt的保存问题。</strong></p>
+        <h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a><strong>题面</strong></h1><p><strong>The Moon</strong></p>
+<p><em>Time Limit: 2000/1000 MS (Java/Others)  Memory Limit: 262144/262144 K (Java/Others)</em><br><em>Total Submission(s): 1120  Accepted Submission(s): 497</em><br><em>Special Judge</em></p>
 <a id="more"></a>
+<p><strong>Problem Description</strong></p>
+<p><em>The Moon card shows a large, full moon in the night’s sky, positioned between two large towers. The Moon is a symbol of intuition, dreams, and the unconscious. The light of the moon is dim, compared to the sun, and only vaguely illuminates the path to higher consciousness which winds between the two towers.</em></p>
+<p>Random Six is a FPS game made by VBI(Various Bug Institution). There is a gift named “Beta Pack”. Mr. K wants to get a beta pack. Here is the rule.<br>Step 0. Let initial chance rate q = 2%.<br>Step 1. Player plays a round of the game with winning rate p.<br>Step 2. If the player wins, then will go to Step 3 else go to Step 4.<br>Step 3. Player gets a beta pack with probability q. If he doesn’t get it, let q = min(100%, q + 2%) and he will go to Step 1.<br>Step 4. Let q = min(100%, q + 1.5%) and goto Step 1.<br>Mr. K has winning rate p% , he wants to know what’s the expected number of rounds before he needs to play.</p>
+<p><strong>Input</strong></p>
+<p>The first line contains testcase number T (T ≤ 100). For each testcase the first line contains an integer p (1 ≤ p ≤ 100).</p>
+<p><strong>Output</strong></p>
+<p>For each testcase print Case i : and then print the answer in one line, with absolute or relative error not exceeding 106.</p>
+<p><strong>Sample Input</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">50</span><br><span class="line">100</span><br></pre></td></tr></table></figure>
 
-<p><strong>在保存txt文件的时候，我的机子默认是用UTF-8的编码保存的，但是我的编译器确实用ANSI码来识别的，所以会出现乱码，只需要在保存的时候更改成和编译器一致的编码就可以解决了。（注：输入和输出的txt的编码要保存一致）</strong></p>
-<p><img src="https://img-blog.csdnimg.cn/20200710191244187.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L29zdXNvZXI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><strong>Sample Output</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Case 1: 12.9933758002</span><br><span class="line">Case 2: 8.5431270393</span><br></pre></td></tr></table></figure>
+
+<p><strong>Source</strong></p>
+<p><a target="_blank" rel="noopener" href="http://acm.hdu.edu.cn/search.php?field=problem&key=2018CCPC%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD-+%EF%BF%BD%EF%BF%BD%D0%BB%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%D1%A7&source=1&searchmode=source">2018CCPC吉林赛区（重现赛）</a></p>
+<hr>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a><strong>题解</strong></h2><h3 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意:"></a>题目大意:</h3><ul>
+<li><p>给你一个胜率p，和一个初始中奖率q=2%，每次玩一局游戏。</p>
+</li>
+<li><p>如果游戏赢了就抽奖：</p>
+<pre><code>           - 没抽到就q+2%，然后继续玩游戏。
+               - 抽到了就直接结束游戏。</code></pre>
+</li>
+<li><p>如果游戏输了就q+1.5%，然后继续玩游戏。</p>
+<p>问玩的游戏局数的期望，并且中奖率最高为100%</p>
+</li>
+</ul>
+<h3 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h3><ol>
+<li>首先题目求期望，推测是概率dp逆推。</li>
+</ol>
+<ol start="2">
+<li>确定dp定义，求什么就用什么，定义dp[i]为当得到概率q为i时游戏局数的期望。                                                         因为i的范围是[0, 1]，所以为了方便dp，让$i=q*1000$；</li>
+</ol>
+<ol start="3">
+<li>所以我们应该从dp[1000]逆推到dp[20]，求和就是答案</li>
+</ol>
+<ol start="4">
+<li>dp[1000]就相当于<strong>求对于一个胜率为Q的游戏的胜利局数期望</strong>                                                                                       则$Ex=Q+2(1−Q)Q+3(1−Q)2Q+…Ex=Q+2(1−Q)Q+3(1−Q)2Q+ ……$<br>可以看出上面的式子是等差数列，求和得1/Q。所以dp[1000]=1/q;</li>
+</ol>
+<ol start="5">
+<li><p>再考虑递推式：</p>
+<ul>
+<li>$dp[i]+=p*(1-q)*(1+dp[min(i+20, 1000)];$      赢了但是没有得到</li>
+<li>$dp[i]+=(1-p)*(1+dp[min(i+15, 1000)];$       输了</li>
+<li>$dp[i]+=p*q$;                        赢了且得到了</li>
+</ul>
+<p>所以 $dp[i]=p*(1-q)<em>(1+dp[min(i+20, 1000)]+(1-p)</em>(1+dp[min(i+15, 1000)]+p*q$ </p>
+<p>注意：上面dp要+1的原因是因为下一局也要加上去，而第三项不加1是因为它本局直接结束。</p>
+</li>
+<li><p>用个for递推dp即可</p>
+</li>
+</ol>
+<p>代码 ：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">#define Oo ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);</span><br><span class="line">#include &lt;bits&#x2F;stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">#define PI acos(-1.0)</span><br><span class="line">typedef long long ll;</span><br><span class="line">double dp[1005];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">      Oo</span><br><span class="line">      int t;</span><br><span class="line">      cin&gt;&gt;t;</span><br><span class="line">      for(int flag&#x3D;1; flag&lt;&#x3D;t; flag++)</span><br><span class="line">      &#123;</span><br><span class="line">            double p;cin&gt;&gt;p;</span><br><span class="line">            p&#x3D;p&#x2F;100.0;</span><br><span class="line">            dp[1000]&#x3D;1.0&#x2F;p;</span><br><span class="line">            for (int i&#x3D;999; i&gt;&#x3D;20; i--)</span><br><span class="line">            &#123;</span><br><span class="line">                  double q&#x3D;i&#x2F;1000.0;</span><br><span class="line">                  dp[i]&#x3D;p*(1-q)*(1+dp[min(1000,i+20)])+(1-p)*(1+dp[min(i+15,1000)])+p*q;</span><br><span class="line">            &#125;</span><br><span class="line">            cout &lt;&lt; &quot;Case &quot;&lt;&lt;flag&lt;&lt;&quot;: &quot; ;</span><br><span class="line">            cout &lt;&lt;fixed&lt;&lt; setprecision(10) &lt;&lt; dp[20] &lt;&lt; endl;</span><br><span class="line">      &#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 
     </div>
 
@@ -228,7 +279,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E9%97%AE%E9%A2%98/" rel="tag"># 问题</a>
+              <a href="/tags/%E9%A2%98%E8%A7%A3/" rel="tag"># 题解</a>
+              <a href="/tags/%E6%A6%82%E7%8E%87dp/" rel="tag"># 概率dp</a>
           </div>
 
         
@@ -237,13 +289,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/09/11/%E5%85%B3%E4%BA%8E%E6%9B%B4%E6%8D%A2next%E4%B8%BB%E9%A2%98%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/" rel="prev" title="关于更换next无法访问的问题">
-      <i class="fa fa-chevron-left"></i> 关于更换next无法访问的问题
+    <a href="/2020/09/15/%E5%88%9D%E6%8E%A2%E6%A6%82%E7%8E%87dp/" rel="prev" title="初探概率dp">
+      <i class="fa fa-chevron-left"></i> 初探概率dp
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/09/14/%5B%E9%A2%98%E8%A7%A3%5D%E7%89%9B%E5%AE%A2%E7%BB%83%E4%B9%A0%E8%B5%9B69ABC/" rel="next" title="牛客练习赛69ABC">
-      牛客练习赛69ABC <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -302,6 +351,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A2%98%E9%9D%A2"><span class="nav-number">1.</span> <span class="nav-text">题面</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3"><span class="nav-number">1.1.</span> <span class="nav-text">题解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E5%A4%A7%E6%84%8F"><span class="nav-number">1.1.1.</span> <span class="nav-text">题目大意:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF%EF%BC%9A"><span class="nav-number">1.1.2.</span> <span class="nav-text">思路：</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
