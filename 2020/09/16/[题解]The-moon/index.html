@@ -30,7 +30,7 @@
 <meta property="og:description" content="题面The Moon Time Limit: 2000&#x2F;1000 MS (Java&#x2F;Others)  Memory Limit: 262144&#x2F;262144 K (Java&#x2F;Others)Total Submission(s): 1120  Accepted Submission(s): 497Special Judge">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-09-16T04:48:09.069Z">
-<meta property="article:modified_time" content="2020-09-16T07:25:11.907Z">
+<meta property="article:modified_time" content="2020-09-17T00:03:30.203Z">
 <meta property="article:author" content="甘楽">
 <meta property="article:tag" content="题解">
 <meta property="article:tag" content="概率dp">
@@ -187,10 +187,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-09-16 12:48:09 / 修改时间：15:25:11" itemprop="dateCreated datePublished" datetime="2020-09-16T12:48:09+08:00">2020-09-16</time>
+              <time title="创建时间：2020-09-16 12:48:09" itemprop="dateCreated datePublished" datetime="2020-09-16T12:48:09+08:00">2020-09-16</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-09-17 08:03:30" itemprop="dateModified" datetime="2020-09-17T08:03:30+08:00">2020-09-17</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -251,14 +257,13 @@
 <li>确定dp定义，求什么就用什么，定义dp[i]为当得到概率q为i时游戏局数的期望。                                                         因为i的范围是[0, 1]，所以为了方便dp，让$i=q*1000$；</li>
 </ol>
 <ol start="3">
-<li>所以我们应该从dp[1000]逆推到dp[20]，求和就是答案</li>
+<li>所以我们应该从dp[1000]逆推到dp[20]，dp[20]就是答案</li>
 </ol>
 <ol start="4">
-<li><p>dp[1000]就相当于<strong>求对于一个胜率为Q的游戏的胜利局数期望</strong>   </p>
-<p>​    $Ex=Q+(1−Q)Q+(1−Q)^2Q+…$</p>
-<p>可以看出上面的式子是等差数列，求和得1/Q。所以dp[1000]=1/q;</p>
-</li>
+<li>dp[1000]就相当于<strong>求对于一个胜率为Q的游戏的胜利局数期望</strong>   </li>
 </ol>
+<p>  ​    $Ex=Q+(1−Q)Q+(1−Q)^2Q+…$</p>
+<p>   可以看出上面的式子是等差数列，求和得1/Q。所以dp[1000]=1/q;</p>
 <ol start="5">
 <li><p>再考虑递推式：</p>
 <ul>
@@ -276,7 +281,7 @@
 </li>
 </ol>
 <p>   所以 $dp[i]=p*(1-q)<em>(1+dp[min(i+20, 1000)]+(1-p)</em>(1+dp[min(i+15, 1000)]+p*q$ </p>
-<p>   注意：上面dp要+1的原因是因为下一局也要加上去，而第三项不加1是因为它本局直接结束。</p>
+<p>   注意：上面dp要+1的原因是因为本局也要加上去。</p>
 <ol start="6">
 <li>用个for递推dp即可</li>
 </ol>
