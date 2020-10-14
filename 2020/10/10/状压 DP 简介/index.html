@@ -22,16 +22,18 @@
 
 
 
-  <meta name="description" content="状压 DP 简介状压 dp 是动态规划的一种，通过将状态压缩为整数来达到优化转移的目的。 状态 dp 在写题时一般是多维数组，下标即是状态信息，值为答案，然后推出递推方程。 在for中下标即作为循环信息，也作为转移信息。 可以先看数据大小是否可以枚举情况，如果可以，那么只需要考虑在状态i时的递推方程即可 例题：1.[锁][https:&#x2F;&#x2F;ac.nowcoder.com&#x2F;acm&#x2F;problem&#x2F;14">
+  <meta name="description" content="状压 DP 简介状压 dp 是动态规划的一种，通过将状态压缩为整数来达到优化转移的目的。 状态 dp 在写题时一般是多维数组，下标即是状态信息，值为答案，然后推出递推方程。 在for中下标即作为循环信息，也作为转移信息。 可以先看数据大小是否可以枚举情况，如果可以，那么只需要考虑在状态i时的递推方程即可">
 <meta property="og:type" content="article">
-<meta property="og:title" content="甘楽的博客">
+<meta property="og:title" content="初探状态压缩dp">
 <meta property="og:url" content="http://example.com/2020/10/10/%E7%8A%B6%E5%8E%8B%20DP%20%E7%AE%80%E4%BB%8B/index.html">
 <meta property="og:site_name" content="甘楽的博客">
-<meta property="og:description" content="状压 DP 简介状压 dp 是动态规划的一种，通过将状态压缩为整数来达到优化转移的目的。 状态 dp 在写题时一般是多维数组，下标即是状态信息，值为答案，然后推出递推方程。 在for中下标即作为循环信息，也作为转移信息。 可以先看数据大小是否可以枚举情况，如果可以，那么只需要考虑在状态i时的递推方程即可 例题：1.[锁][https:&#x2F;&#x2F;ac.nowcoder.com&#x2F;acm&#x2F;problem&#x2F;14">
+<meta property="og:description" content="状压 DP 简介状压 dp 是动态规划的一种，通过将状态压缩为整数来达到优化转移的目的。 状态 dp 在写题时一般是多维数组，下标即是状态信息，值为答案，然后推出递推方程。 在for中下标即作为循环信息，也作为转移信息。 可以先看数据大小是否可以枚举情况，如果可以，那么只需要考虑在状态i时的递推方程即可">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-10-09T16:11:40.781Z">
-<meta property="article:modified_time" content="2020-10-14T15:09:53.935Z">
+<meta property="article:modified_time" content="2020-10-14T23:00:27.434Z">
 <meta property="article:author" content="甘楽">
+<meta property="article:tag" content="dp">
+<meta property="article:tag" content="状压dp">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://example.com/2020/10/10/%E7%8A%B6%E5%8E%8B%20DP%20%E7%AE%80%E4%BB%8B/">
@@ -47,7 +49,7 @@
   };
 </script>
 
-  <title> | 甘楽的博客</title>
+  <title>初探状态压缩dp | 甘楽的博客</title>
   
 
 
@@ -176,7 +178,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
+          初探状态压缩dp
         </h1>
 
         <div class="post-meta">
@@ -193,8 +195,17 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-10-14 23:09:53" itemprop="dateModified" datetime="2020-10-14T23:09:53+08:00">2020-10-14</time>
+                <time title="修改时间：2020-10-15 07:00:27" itemprop="dateModified" datetime="2020-10-15T07:00:27+08:00">2020-10-15</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/dp/" itemprop="url" rel="index"><span itemprop="name">dp</span></a>
+                </span>
+            </span>
 
           
 
@@ -211,7 +222,9 @@
 <p>状态 dp 在写题时一般是多维数组，下标即是状态信息，值为答案，然后推出递推方程。</p>
 <p>在for中下标即作为循环信息，也作为转移信息。</p>
 <p>可以先看数据大小是否可以枚举情况，如果可以，那么只需要考虑在状态i时的递推方程即可</p>
-<h2 id="例题："><a href="#例题：" class="headerlink" title="例题："></a>例题：</h2><h2 id="1-锁-https-ac-nowcoder-com-acm-problem-14732"><a href="#1-锁-https-ac-nowcoder-com-acm-problem-14732" class="headerlink" title="1.[锁][https://ac.nowcoder.com/acm/problem/14732]"></a>1.<strong>[锁][<a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/14732]">https://ac.nowcoder.com/acm/problem/14732]</a></strong></h2><p>106号房间共有n名居民， 他们每人有一个重要度。房间的门上可以装若干把锁。假设共有k把锁，命名为1到k。每把锁有一种对应的钥匙，也用1到k表示。钥匙可以复制并发给任意多个居民。每个106房间的居民持有若干钥匙，也就是1到k的一个子集。如果几名居民的钥匙的并集是1到k，即他们拥有全部锁的对应钥匙，他们都在场时就能打开房门。新的陆战协定规定，一组居民都在场时能打开房门当且仅当他们的重要度加起来至少为m。问至少需要给106号房间装多少把锁。即，求最小的k，使得可以适当地给居民们每人若干钥匙(即一个1到k的子集)，使得任意重要度之和小于m的居民集合持有的钥匙的并集不是1到k，而任意重要度之和大于等于m的居民集合持有的钥匙的并集是1到k。 </p>
+<a id="more"></a>
+
+<h2 id="例题："><a href="#例题：" class="headerlink" title="例题："></a>例题：</h2><h2 id="1-锁-https-ac-nowcoder-com-acm-problem-14732"><a href="#1-锁-https-ac-nowcoder-com-acm-problem-14732" class="headerlink" title="1.[锁][https://ac.nowcoder.com/acm/problem/14732]"></a>1.[锁][<a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/14732]">https://ac.nowcoder.com/acm/problem/14732]</a></h2><p>106号房间共有n名居民， 他们每人有一个重要度。房间的门上可以装若干把锁。假设共有k把锁，命名为1到k。每把锁有一种对应的钥匙，也用1到k表示。钥匙可以复制并发给任意多个居民。每个106房间的居民持有若干钥匙，也就是1到k的一个子集。如果几名居民的钥匙的并集是1到k，即他们拥有全部锁的对应钥匙，他们都在场时就能打开房门。新的陆战协定规定，一组居民都在场时能打开房门当且仅当他们的重要度加起来至少为m。问至少需要给106号房间装多少把锁。即，求最小的k，使得可以适当地给居民们每人若干钥匙(即一个1到k的子集)，使得任意重要度之和小于m的居民集合持有的钥匙的并集不是1到k，而任意重要度之和大于等于m的居民集合持有的钥匙的并集是1到k。 </p>
 <h3 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述:"></a>输入描述:</h3><p>第一行两个整数n和m，0&lt;n&lt;21，0&lt;m&lt;1000000001。<br>第二行n个整数表示居民们的重要度。<br>重要度在[1,1000000000]之间。</p>
 <h3 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述:"></a>输出描述:</h3><p>一个整数表示最少需要多少把锁。</p>
 <h3 id="解析："><a href="#解析：" class="headerlink" title="解析："></a>解析：</h3><p>对于一个复杂度&lt;m的集合，如果加上集合外的一个最小复杂度后，复杂度&gt;=m的话，称该集合为<strong>最小复杂度集合</strong></p>
@@ -221,7 +234,7 @@
 <p>因为n&lt;21，所以用状态dp，遍历每一个状态，判断当前状态是否属于最小复杂度集合，属于ans++，否则继续。</p>
 <h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">#define Oo ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);</span><br><span class="line">#include &lt;bits&#x2F;stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">#define PI acos(-1.0)</span><br><span class="line">typedef  long long ll;</span><br><span class="line">ll n, m, a[40];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">      Oo</span><br><span class="line">      cin&gt;&gt;n&gt;&gt;m;</span><br><span class="line">      for (int i&#x3D;1; i&lt;&#x3D;n; i++)cin&gt;&gt;a[i];</span><br><span class="line">      ll ans&#x3D;0;</span><br><span class="line">      for (int i&#x3D;0; i&lt; (1&lt;&lt;n); i++)</span><br><span class="line">      &#123;</span><br><span class="line">            ll temp &#x3D; 0;</span><br><span class="line">            ll mi &#x3D; INT_MAX;</span><br><span class="line">            for (int j&#x3D;0; j&lt;n; j++)</span><br><span class="line">            &#123;</span><br><span class="line">                  if ((1&lt;&lt;j)&amp;i)temp+&#x3D;a[j+1];</span><br><span class="line">                  else mi &#x3D; min(mi, a[j+1]);</span><br><span class="line">            &#125;</span><br><span class="line">            if (temp&gt;&#x3D;m)continue;</span><br><span class="line">            else </span><br><span class="line">            &#123;</span><br><span class="line">                  if (temp+mi&gt;&#x3D;m)ans++;</span><br><span class="line">            &#125;</span><br><span class="line">      &#125;cout &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="2-简单环-https-ac-nowcoder-com-acm-problem-16544"><a href="#2-简单环-https-ac-nowcoder-com-acm-problem-16544" class="headerlink" title="2.[简单环][https://ac.nowcoder.com/acm/problem/16544]"></a><strong>2.[简单环][<a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/16544]">https://ac.nowcoder.com/acm/problem/16544]</a></strong></h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>  给定一张n个点m条边的无向图，求出图中所有简单环的数量。(简单环：简单环又称简单回路，图的顶点序列中，除了第一个顶点和最后一个顶点相同外，其余顶点不重复出现的回路叫简单回路。或者说，若通路或回路不重复地包含相同的边，则它是简单的)  </p>
+<h2 id="2-简单环-https-ac-nowcoder-com-acm-problem-16544"><a href="#2-简单环-https-ac-nowcoder-com-acm-problem-16544" class="headerlink" title="2.[简单环][https://ac.nowcoder.com/acm/problem/16544]"></a>2.[简单环][<a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/problem/16544]">https://ac.nowcoder.com/acm/problem/16544]</a></h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>  给定一张n个点m条边的无向图，求出图中所有简单环的数量。(简单环：简单环又称简单回路，图的顶点序列中，除了第一个顶点和最后一个顶点相同外，其余顶点不重复出现的回路叫简单回路。或者说，若通路或回路不重复地包含相同的边，则它是简单的)  </p>
 <h3 id="输入描述-1"><a href="#输入描述-1" class="headerlink" title="输入描述:"></a>输入描述:</h3><p>第一行三个数n m k (k在输出描述中提到)<br>接下来m行每行两个数u，v表示u到v之间存在一条边（无重边）</p>
 <h3 id="输出描述-1"><a href="#输出描述-1" class="headerlink" title="输出描述:"></a>输出描述:</h3><p>输出k行每行1个整数<br>第i个数表示长度%k==i-1的简单环的数量（对998244353取模）<br>(只记录长度大于2的简单环的数量)</p>
 <h3 id="备注"><a href="#备注" class="headerlink" title="备注:"></a>备注:</h3><p>n&lt;=20<br>m&lt;=n*(n-1)/2<br>k&lt;=n</p>
@@ -238,6 +251,10 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/dp/" rel="tag"># dp</a>
+              <a href="/tags/%E7%8A%B6%E5%8E%8Bdp/" rel="tag"># 状压dp</a>
+          </div>
 
         
 
@@ -338,7 +355,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
